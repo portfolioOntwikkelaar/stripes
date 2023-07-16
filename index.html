@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>stripes</title>
+</head>
+<body>
+  <img src="astral.png" class="astral">
+  <script>
+
+
+    function stripes() {
+      let sizeW = Math.random() * 3;
+      let e = document.createElement('div');
+      e.classList.add('lines');
+      document.body.appendChild(e);
+      e.style.left = Math.random() * innerWidth + 'px';
+      e.style.width = 1 + sizeW + 'px';
+      e.style.background = 'hsl('+Math.floor(Math.random()*90)+'deg, 100%, 50%)';
+
+      setTimeout(function(){
+        document.body.removeChild(e)
+      },2000)
+
+    }
+    setInterval(function(){
+      stripes()
+    },20);
+
+  </script>
+</body>
+</html>
